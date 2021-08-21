@@ -1,3 +1,3 @@
-My Github.io webside
+My Github.io
 
 https://terrifictable.github.io/github.io/
