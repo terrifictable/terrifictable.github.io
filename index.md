@@ -3,8 +3,11 @@
 I Upload things there: 
 [My Github Profile](https://github.com/TerrificTable/)
 
-here you can see these things: 
+Here you can see these things: 
 [My Github Repositorys](https://github.com/TerrificTable?tab=repositories)
+
+Im making videos here:
+[My YouTube Channel](https://www.youtube.com/channel/UCZvMGjd_O0JNO6sb25BvguQ)
 
 ```markdown
 Syntax here
