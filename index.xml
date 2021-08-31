@@ -1,1 +1,12 @@
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TerrificTable&#39;s Side</title>
+    <link>https://dreamgonfly.github.io/</link>
+    <description>TerrificTable&#39;s Side</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>© {year}</copyright>
+    <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://terrifictable.github.io/github.io/index.xml" rel="self" type="https://terrifictable.github.io/github.io/application/rss+xml" />
+  </channel>
+</rss>
