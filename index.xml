@@ -8,5 +8,12 @@
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://terrifictable.github.io/github.io/index.xml" rel="self" type="https://terrifictable.github.io/github.io/application/rss+xml" />
+    <item>
+      <title>Ubuntu 설치 시 디스크 파티션 나누기</title>
+      <link>https://terrifictable.github.io/github.io/</link>
+      <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
+      <guid>https://terrifictable.github.io/github.io/</guid>
+      <description>desc</description>
+    </item>
   </channel>
 </rss>
