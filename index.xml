@@ -2,15 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>TerrificTable&#39;s Side</title>
-    <link>https://dreamgonfly.github.io/</link>
+    <link>https://terrifictable.github.io/github.io/</link>
     <description>TerrificTable&#39;s Side</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>© {year}</copyright>
     <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://terrifictable.github.io/github.io/index.xml" rel="self" type="https://terrifictable.github.io/github.io/application/rss+xml" />
     <item>
-      <title>Ubuntu 설치 시 디스크 파티션 나누기</title>
-      <link>https://terrifictable.github.io/github.io/</link>
+      <title>test</title>
+      <link>https://terrifictable.github.io/github.io/test/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://terrifictable.github.io/github.io/</guid>
       <description>desc</description>
