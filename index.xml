@@ -15,5 +15,14 @@
       <guid>https://terrifictable.github.io/</guid>
       <description>desc</description>
     </item>
+
+    <item>
+      <title>Test</title>
+      <link>https://terrifictable.github.io/blog/test/</link>
+      <pubDate>Mon, 05 Oct 2020 16:23:00 +0900</pubDate>
+      
+      <guid>https://terrifictable.github.io/blog/test/</guid>
+      <description>test.</description>
+    </item>
   </channel>
 </rss>
