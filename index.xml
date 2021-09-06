@@ -9,22 +9,13 @@
     <copyright>© {year}</copyright>
     <lastBuildDate>Thu, 08 Oct 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://terrifictable.github.io/index.xml" rel="self" type="https://terrifictable.github.io/application/rss+xml" />
     <item>
-      <title>test</title>
-      <link>https://terrifictable.github.io/test/</link>
+      <title>Main</title>
+      <link>https://terrifictable.github.io/</link>
       <pubDate>Thu, 08 Oct 2020 00:00:00 +0000</pubDate>
       <guid>https://terrifictable.github.io/</guid>
-      <description>desc</description>
+      <description>Main Page of my GitHub.io</description>
     </item>
 
-    <item>
-      <title>Test</title>
-      <link>https://terrifictable.github.io/blog/test/</link>
-      <pubDate>Mon, 05 Oct 2020 16:23:00 +0900</pubDate>
-      
-      <guid>https://terrifictable.github.io/blog/test/</guid>
-      <description>test.</description>
-    </item>
-    
     <item>
       <title>Discord Webhook Tool</title>
       <link>https://terrifictable.github.io/webhook/</link>
@@ -32,6 +23,24 @@
       
       <guid>https://terrifictable.github.io/webhook/</guid>
       <description>Discord Webhook Tool.</description>
+    </item>
+
+    <item>
+      <title>View Bot</title>
+      <link>https://terrifictable.github.io/blog/view-bot</link>
+      <pubDate>Spe-05-2021</pubDate>
+      
+      <guid>https://terrifictable.github.io/blog/view-bot/</guid>
+      <description>A YouTube, TikTok and more View Bot in python.</description>
+    </item>
+
+    <item>
+      <title>Test</title>
+      <link>https://terrifictable.github.io/blog/test/</link>
+      <pubDate>Spe-03-2021</pubDate>
+      
+      <guid>https://terrifictable.github.io/blog/test/</guid>
+      <description>test.</description>
     </item>
   </channel>
 </rss>
