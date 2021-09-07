@@ -109,7 +109,6 @@ if (!doNotTrack) {
 
 <h3 id="How it Works">How it Works<a class="anchor" href="#How it Works"></a></h2>
 <blockquote>
-
   <p>I sometimes used Classes and sometimes used def's to create this</p>
   <p>The first option:</p>
   <blockquote>
@@ -181,6 +180,90 @@ if (!doNotTrack) {
       <p>    print(f" {out} Finished,</p> {finish}")
       <p>    input(); exit()</p>
     </blockquote>
+  </blockquote>
+  <p></p>
+  <p>The second option:</p>
+  <blockquote>
+    <p>Using webdriver to open a YouTube Video in a new Tab</p>
+    <p>If you havnt installed webdriver alread:</p>
+    <blockquote>
+      <p>- pip install webdriver</p>
+    </blockquote>
+    <p></p>
+    <p>Creating a random delay</p>
+    <blockquote>
+      <p>randomdel = int(randint(0, 60))</p>
+    </blockquote>
+    <p></p>
+    <p>Creating the View Definition</p>
+    <blockquote>
+      <p>delay = input(f" {inp} Input a delay to open Tabs: ")</p>
+      <p>def view():</p>
+      
+      <p></p>
+      <p>Opening a new Video Tab with set + random delay</p>
+      <blockquote>
+        <p>    if str(d).lower() == "c":</p>
+        <p>        webbrowser.open(url)</p>
+        <p>        print(f" {log} Delay: {duration}(sec) + {randomdel+(duration/2)}(sec)")</p>
+        <p>        sleep(round(int(duration))*60 + round(randomdel+(duration/2)))</p>
+      </blockquote>
+
+      <p></p>
+      <p>Opening a Video Tab with a random delay</p>
+      <blockquote>
+        <p>    elif str(d).lower() == "r":</p>
+        <p>        webbrowser.open(url)</p>
+        <p>        sleep(round(int(randint(1, 5)*60)))</p>
+        <p>    exit()</p>
+      </blockquote>
+    </blockquote>
+    <p></p>
+    <p>Creating Threads</p>
+    <blockquote>
+      <p>threads = []</p>
+      <p>try:</p>
+      <p>    for i in range(int(sessions)):</p>
+      <p></p>
+        <p>        thread =threading.Thread(target=view)</p>
+        <p>        thread.daemon = True</p>
+        <p>        threads.append(thread)</p>
+    </blockquote>
+    <p></p>
+    <p>Starting Thread</p>
+    <blockquote>
+      <p>        thread.start()</p>
+      <p>        sleep(int(delay+(delay/2)))</p>
+      <p>    print(f" {out} Finished, {finish}")</p>
+    </blockquote>
+    <p></p>
+    <p>Catching Error's</p>
+    <blockquote>
+      <p>except Exception as e:</p>
+      <p>    print(f" {err} {e}\n {finish}")</p>
+      <p>    input(); exit()</p>
+    </blockquote>
+    <p></p>
+    <p>Joining Threads</p>
+    <blockquote>
+      <p>try:</p>
+      <p>    for i in range(len(threads)):</p>
+      <p>        thread.join()</p>
+      <p>        print(f" {log} Delay: {delay}(sec) + {randomdel+(delay/2)}(sec)")</p>
+      <p>        sleep(int(delay) + round(randomdel+(delay/2)))</p>
+    </blockquote>
+    <p></p>
+    <p>Catching Error's</p>
+    <blockquote>
+      <p>except Exception as e:</p>
+      <p>    print(f" {err} {e}\n {finish}")</p>
+      <p>    input(); exit()</p>
+    </blockquote>
+  </blockquote>
+  <p></p>
+  <p>The third option:</p>
+  <blockquote>
+    
   </blockquote>
 </blockquote>
 
