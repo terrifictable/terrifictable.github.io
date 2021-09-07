@@ -119,6 +119,10 @@ if (!doNotTrack) {
     </blockquote>
     <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">Download ChromeDriver</a>
     <p></p>
+    <p>Creating a random delay</p>
+    <blockquote>
+      <p>randomdel = int(randint(0, 60))</p>
+    </blockquote>
     <p>Initializing webdriver.Chrome (setting self.browser as Chrome)</p>
     <blockquote>
       <p>def __init__(self):</p>
@@ -195,6 +199,7 @@ if (!doNotTrack) {
       </blockquote>
     </blockquote>
   </blockquote>
+
   <p></p>
   <p>The second option:</p>
   <blockquote>
@@ -282,6 +287,12 @@ if (!doNotTrack) {
     <p></p>
     <p>Catching Error's</p>
     <blockquote>
+      <p>Using Chromedriver and webdriver to open a YouTube Channel Tab</p>
+      <p>If you havnt installed webdriver alread:</p>
+      <blockquote>
+        <p>- pip install webdriver</p>
+      </blockquote>
+      <p></p>
       <p>except Exception as e:</p>
       <blockquote>
         <p>    print(f" {err} {e}\n {finish}")</p>
@@ -289,10 +300,69 @@ if (!doNotTrack) {
       </blockquote>
     </blockquote>
   </blockquote>
+
   <p></p>
   <p>The third option:</p>
   <blockquote>
-    
+    <p>Creating a random delay</p>
+    <blockquote>
+      <p>randomdel = int(randint(0, 60))</p>
+    </blockquote>
+    <p>Initializing ChromeDriver</p>
+    <blockquote>
+      <p>def __init__(self):</p>
+      <p>    self.browser = webdriver.Chrome(executable_path=PATH)</p>
+    </blockquote>
+    <p></p>
+    <p>Opening Video Url in a new Chrome Video</p>
+    <blockquote>
+      <p>def __video(self):</p>
+      <blockquote>
+        <p>  self.browser.get(url)</p>
+        <p>  sleep(1)</p>
+        <p>  try:</p>
+        <blockquote>
+          <p>      accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')</p>
+          <p>      accept.click()</p>
+          <p>      sleep(1)</p>
+        </blockquote>
+        <p>  except:</p>
+        <blockquote>
+          <p>      pass</p>
+        </blockquote>
+        <p>  sleep(1)</p>
+      </blockquote>
+    </blockquote>
+    <p></p>
+    <p>Accepting YouTube/Google's TOS or whatever this accept popup thingy is</p>
+    <blockquote>
+      <p>def __video(self):</p>
+      <blockquote>
+        <p>self.browser.get(url)</p>
+        <p>sleep(1)</p>
+        <p>try:</p>
+        <blockquote>
+          <p>    accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')</p>
+          <p>    accept.click()</p>
+          <p>    sleep(1)</p>
+        </blockquote>
+        <p>except:</p>
+        <blockquote>
+          <p>    pass</p>
+        </blockquote>
+        <p>sleep(1)</p>
+      </blockquote>
+      <p></p>
+      <p>Stoping the Viewbot after it watched the last inputed videos (integer amount)</p>
+      <blockquote>
+        <p>def stop(self):</p>
+        <blockquote>
+          <p>    self.browser.close()</p>
+          <p>    print(f" {out} Finished,</p> {finish}")
+          <p>    input(); exit()</p>
+        </blockquote>
+      </blockquote>
+    </blockquote>
   </blockquote>
 </blockquote>
 
