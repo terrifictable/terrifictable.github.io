@@ -114,33 +114,30 @@ if (!doNotTrack) {
   <blockquote>
     <p>Using Chromedriver and webdriver to open a YouTube Channel Tab</p>
     <p>If you havnt installed webdriver alread:</p>
-    <blockquote>
-      <p>- pip install webdriver</p>
-    </blockquote>
+    <pre><code class="language-shell"> pip install webdriver</code></pre>
     <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">Download ChromeDriver</a>
     <p></p>
     <p>Creating a random delay</p>
-    <blockquote>
-      <pre><code class="language-python">randomdel = int(randint(0, 60));
-      </code></pre>
-    </blockquote>
+      <pre><code class="language-python">randomdel = int(randint(0, 60));</code></pre>
+
     <p>Initializing webdriver.Chrome (setting self.browser as Chrome)</p>
     <blockquote>
-      <pre><code class="language-python">def __init__(self):
-          self.browser = webdriver.Chrome(executable_path=PATH)
+      <pre><code class="language-python">
+        def __init__(self):
+            self.browser = webdriver.Chrome(executable_path=PATH)
         </code></pre>
-    </blockquote>
+
     <p></p>
     <p>Getting Channel page</p>
-    <blockquote>
-      <pre><code class="language-python">def __home(self):
-          self.browser.get(channel)
-          sleep(2)</code></pre>
-    </blockquote>
+      <pre><code class="language-python">
+        def __home(self):
+            self.browser.get(channel)
+            sleep(2)</code></pre>
+
     <p></p>
     <p>Accepting YouTube/Google's TOS or this weird questions</p>
-    <blockquote>
-      <pre><code class="language-python">def __videoPage(self):
+      <pre><code class="language-python">
+        def __videoPage(self):
            self.__home()
            try:
                   accept = self.browser.find_element_by_xpath('/html/body/c-wiz/div/div/div/div[2]/div[1]/div[4]/form')
@@ -149,43 +146,41 @@ if (!doNotTrack) {
             except:
                   pass
             sleep(2)</code></pre>
-    </blockquote>
+
     <p>Clicking on VideoPage using XPath's to click</p>
-    <blockquote>
-      <pre><code class="language-python">videoElm = self.browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-browse/div[3]/ytd-c4-tabbed-header-renderer/tp-yt-app-header-layout/div/tp-yt-app-header/div[2]/tp-yt-app-toolbar/div/div/tp-yt-paper-tabs/div/div/tp-yt-paper-tab[2]')
-          videoElm.click()
-          sleep(2)</code>
-    </blockquote>
+      <pre><code class="language-python">
+        videoElm = self.browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-browse/div[3]/ytd-c4-tabbed-header-renderer/tp-yt-app-header-layout/div/tp-yt-app-header/div[2]/tp-yt-app-toolbar/div/div/tp-yt-paper-tabs/div/div/tp-yt-paper-tab[2]')
+        videoElm.click()
+        sleep(2)</code>
+
     <p></p>
     <p>Getting Video ID using XPath to find the 'thumbnail' ID</p>
-    <blockquote>
-      <pre><code class="language-python">def __videoID(self, elementNumber):
+      <pre><code class="language-python">
+        def __videoID(self, elementNumber):
             self.ids = self.browser.find_elements_by_id('thumbnail')
             return self.ids[elementNumber]</code></pre>
-    </blockquote>
+
     <p></p>
     <p>Watching a Video using XPath to click un the Thumbnail (__videoID) and returning to the Channel Tab (__home)</p>
-    <blockquote>
-      <pre><code class="language-python">def watchVideo(self, videoNumber, watchTime):
-          self.videoNumber = videoNumber
-            self.watchTime = watchTime
+      <pre><code class="language-python">
+        def watchVideo(self, videoNumber, watchTime):
+            self.videoNumber = videoNumber
+                self.watchTime = watchTime
 
-            self.__videoPage()
-            self.__videoID(self.videoNumber)
+                self.__videoPage()
+                self.__videoID(self.videoNumber)
 
-            thumbnailElm = self.__videoID(self.videoNumber)
-            thumbnailElm.click()
-            print(f" {log} Watchtime: {watchTime}(sec) + {randomdel+(watchTime/2)}(sec)")
-            sleep(int(watchTime + round(randomdel+(watchTime/2))))</code></pre>
-    </blockquote>
+                thumbnailElm = self.__videoID(self.videoNumber)
+                thumbnailElm.click()
+                print(f" {log} Watchtime: {watchTime}(sec) + {randomdel+(watchTime/2)}(sec)")
+                sleep(int(watchTime + round(randomdel+(watchTime/2))))</code></pre>
     <p></p>
     <p>Stoping the Viewbot after it watched the last inputed videos (integer amount)</p>
-    <blockquote>
-      <pre><code class="language-python">def stop(self):
+      <pre><code class="language-python">
+        def stop(self):
             self.browser.close()
             print(f" {out} Finished, {finish}")
             input(); exit()</code></pre>
-    </blockquote>
   </blockquote>
 
   <p></p>
@@ -193,147 +188,115 @@ if (!doNotTrack) {
   <blockquote>
     <p>Using webdriver to open a YouTube Video in a new Tab</p>
     <p>If you havnt installed webdriver alread:</p>
-    <blockquote>
       <pre><code class="language-shell">pip install webdriver</code></pre>
-    </blockquote>
     <p></p>
     <p>Creating a random delay</p>
-    <blockquote>
-      <pre><code class="language-python"></code>randomdel = int(randint(0, 60))</pre></blockquote>
-    </blockquote>
+      <pre><code class="language-python">randomdel = int(randint(0, 60))</code></pre>
+
     <p></p>
     <p>Creating the View Definition</p>
-    <blockquote>
-        <pre><code class="language-python">delay = input(f" {inp} Input a delay to open Tabs: ")
-        def view():</code></pre>
-    </blockquote>
+        <pre><code class="language-python">
+        delay = input(f" {inp} Input a delay to open Tabs: ")</code></pre>
     
     <p></p>
     <p>Opening a new Video Tab with set + random delay</p>
-    <blockquote>
-      <pre><code class="language-python">    if str(d).lower() == "c":
-              webbrowser.open(url)
-              print(f" {log} Delay: {duration}(sec) + {randomdel+(duration/2)}(sec)")
-              sleep(round(int(duration))*60 + round(randomdel+(duration/2)))</code></pre>
-    </blockquote>
+      <pre><code class="language-python">
+        def view():
+            if str(d).lower() == "c":
+                webbrowser.open(url)
+                print(f" {log} Delay: {duration}(sec) + {randomdel+(duration/2)}(sec)")
+                sleep(round(int(duration))*60 + round(randomdel+(duration/2)))</code></pre>
 
     <p></p>
     <p>Opening a Video Tab with a random delay</p>
-    <blockquote>
-      <pre><code class="language-python">    elif str(d).lower() == "r":
-                webbrowser.open(url)
-                sleep(round(int(randint(1, 5)*60)))
-          exit()</code></pre>
-    </blockquote>
+      <pre><code class="language-python">
+        elif str(d).lower() == "r":
+            webbrowser.open(url)
+            sleep(round(int(randint(1, 5)*60)))
+        exit()</code></pre>
 
     <p></p>
     <p>Creating Threads</p>
-    <blockquote>
       <pre><code class="language-python">threads = []
       try:
           for i in range(int(sessions)):
-                thread =threading.Thread(target=view)
-                thread.daemon = True
-                threads.append(thread)</code></pre>
-    </blockquote>
-
-    <p></p>
-    <p>Starting Thread</p>
-    <blockquote>
-        <pre><code class="language-python">        thread.start()
-                sleep(int(delay+(delay/2)))
+              thread =threading.Thread(target=view)
+              thread.daemon = True
+              threads.append(thread)</code></pre>
+              thread.start()
+              sleep(int(delay+(delay/2)))
           print(f" {out} Finished, {finish}")</code></pre>
-    </blockquote>
 
     <p></p>
     <p>Catching Error's</p>
-    <blockquote>
-      <pre><code class="language-python">except Exception as e:
+      <pre><code class="language-python">
+        except Exception as e:
             print(f" {err} {e}\n {finish}")
             input(); exit()</code></pre>
-    </blockquote>
 
     <p></p>
     <p>Joining Threads</p>
-    <blockquote>
-      <pre><code class="language-python">try:
+      <pre><code class="language-python">
+        try:
             for i in range(len(threads)):
-                  thread.join()
-                  print(f" {log} Delay: {delay}(sec) + {randomdel+(delay/2)}(sec)")
-                  sleep(int(delay) + round(randomdel+(delay/2)))</code></pre>
-    </blockquote>
+                thread.join()
+                print(f" {log} Delay: {delay}(sec) + {randomdel+(delay/2)}(sec)")
+                sleep(int(delay) + round(randomdel+(delay/2)))</code></pre>
 
     <p></p>
     <p>Catching Error's</p>
-    <blockquote>
-    <pre><code class="language-python">except Exception as e:
+    <pre><code class="language-python">
+      except Exception as e:
           print(f" {err} {e}\n {finish}")
           input(); exit()</code></pre>
-    </blockquote>
   </blockquote>
 
   <p></p>
   <p>The third option:</p>
   <blockquote>
     <p>Creating a random delay</p>
-    <blockquote>
       <pre><code class="language-python">randomdel = int(randint(0, 60))</code></pre>
-    </blockquote>
+
     <p>Initializing ChromeDriver</p>
-    <blockquote>
-      <pre><code class="language-python">def __init__(self):
-          self.browser = webdriver.Chrome(executable_path=PATH)</code></pre>
-    </blockquote>
+      <pre><code class="language-python">
+        def __init__(self):
+            self.browser = webdriver.Chrome(executable_path=PATH)</code></pre>
+
     <p></p>
     <p>Opening Video Url in a new Chrome Video</p>
-    <blockquote>
-      <p>def __video(self):</p>
-      <blockquote>
-        <p>  self.browser.get(url)</p>
-        <p>  sleep(1)</p>
-        <p>  try:</p>
-        <blockquote>
-          <p>      accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')</p>
-          <p>      accept.click()</p>
-          <p>      sleep(1)</p>
-        </blockquote>
-        <p>  except:</p>
-        <blockquote>
-          <p>      pass</p>
-        </blockquote>
-        <p>  sleep(1)</p>
-      </blockquote>
-    </blockquote>
+      <pre><code class="language-python">
+        def __video(self):
+            self.browser.get(url)
+            sleep(1)
+            try:
+                accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')
+                accept.click()
+                sleep(1)
+            except:
+                pass
+            sleep(1)</code></pre>
+
     <p></p>
     <p>Accepting YouTube/Google's TOS or whatever this accept popup thingy is</p>
-    <blockquote>
-      <p>def __video(self):</p>
-      <blockquote>
-        <p>self.browser.get(url)</p>
-        <p>sleep(1)</p>
-        <p>try:</p>
-        <blockquote>
-          <p>    accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')</p>
-          <p>    accept.click()</p>
-          <p>    sleep(1)</p>
-        </blockquote>
-        <p>except:</p>
-        <blockquote>
-          <p>    pass</p>
-        </blockquote>
-        <p>sleep(1)</p>
-      </blockquote>
+    <pre><code class="language-python">
+      def __video(self):
+          self.browser.get(url)
+          sleep(1)
+          try:
+                accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')
+                accept.click()
+                sleep(1)
+          except:
+                pass
+          sleep(1)</code></pre>
+
       <p></p>
       <p>Stoping the Viewbot after it watched the last inputed videos (integer amount)</p>
-      <blockquote>
-        <p>def stop(self):</p>
-        <blockquote>
-          <p>    self.browser.close()</p>
-          <p>    print(f" {out} Finished,</p> {finish}")
-          <p>    input(); exit()</p>
-        </blockquote>
-      </blockquote>
-    </blockquote>
+      <pre><code class="language-python">
+        def stop(self):
+            self.browser.close()
+            print(f" {out} Finished, {finish}")
+            input(); exit()</code></pre>
   </blockquote>
 </blockquote>
 
