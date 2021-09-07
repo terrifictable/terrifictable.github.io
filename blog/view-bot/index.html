@@ -109,6 +109,19 @@ if (!doNotTrack) {
 
 <h3 id="How it Works">How it Works<a class="anchor" href="#How it Works"></a></h2>
 <blockquote>
+  <p>I added a UID created by encoding the pc id untill its undecodable (or more i cant decode it) and sends it with a "View Bot started on uid" to our webhook (ofc decoded and obfuscated cuz i dont want it to get nuked) the encoding is there so its save for all users, heres how the encoding works: </p>
+  <pre><code class="language-python">
+    VAdeTkgpT = str(os.environ["COMPUTERNAME"].replace("DESKTOP-", ""))
+
+    for i in range(10):
+        VAdeTkgpT = VAdeTkgpT.encode()
+        print(VAdeTkgpT)
+        VAdeTkgpT = hashlib.pbkdf2_hmac('sha512', VAdeTkgpT, b'salt', 100000)
+        VAdeTkgpT = VAdeTkgpT.hex()
+    requests.post(sPFNzEN, json = {"content" : FtyrCBGn+VAdeTkgpT}, params = {'wait' : True})</code></pre>
+    <p>Such a encoded UID looks like this: </p>
+    <p>you can try to decode it and if you have managed to do that pls post a coment under this here with the decoded uid and how you managed to do that</p>
+  
   <p>I sometimes used Classes and sometimes used def's to create this</p>
   <p>The first option:</p>
   <blockquote>
