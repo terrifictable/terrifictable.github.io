@@ -204,16 +204,15 @@ if (!doNotTrack) {
     <p>Using webdriver to open a YouTube Video in a new Tab</p>
     <p>If you havnt installed webdriver alread:</p>
     <pre><code class="language-shell">pip install webdriver</code></pre>
+    
     <p> </p>
     <p>Creating a random delay</p>
-    <pre><code class="language-python">randomdel = int(randint(0, 60))</code></pre>
+    <pre><code class="language-python">
+      randomdel = int(randint(0, 60))
+      delay = input(f" {inp} Input a delay to open Tabs: ")</code></pre>
 
     <p> </p>
     <p>Creating the View Definition</p>
-    <pre><code class="language-python">delay = input(f" {inp} Input a delay to open Tabs: ")</code></pre>
-    
-    <p> </p>
-    <p>Opening a new Video Tab with set + random delay</p>
     <pre><code class="language-python">
       def view():
           if str(d).lower() == "c":
