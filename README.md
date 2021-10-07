@@ -1,4 +1,4 @@
 My Github.io
 
-https://terrifictable.github.io/github.io/
+https://terrifictable.github.io/
 
