@@ -84,21 +84,22 @@ if (!doNotTrack) {
 
 <h2 id="introduction">Introduction<a class="anchor" href="#introduction"></a></h2>
 <blockquote>
-  <p>This is a ViewBot for YouTube, TikTok or whatever you want, it was originaly made to not be open src but i thought about it again and made it open src</p>
+  <p>This is a ViewBot for YouTube, TikTok or whatever you want.<br>
+    It was originaly made to not be open src but i thought about it again and made it open src</p>
   <p><a href="https://www.github.com/TerrificTable/YouTube-and-TikTok--View-Bot/">ViewBot on Github</a></p>
-  <p>The ViewBot has its own UI and it doesnt need much librarys to install.</p>
+  <p>The ViewBot has its own UI and it doesn't need many libraries to install.</p>
   <p><a href="https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot/"><img src="https://raw.githubusercontent.com/TerrificTable/YouTube-and-TikTok--View-Bot/main/ui.png" alt=""></a></p>
 </blockquote>
 
 <blockquote>
   <h2 id="Get-It-To-Work">Setting it up<a class="anchor" href="#Get-It-To-Work"></a></h2>
   <blockquote>
-    <p>just git clone the repository.</p>
+    <p>Just git clone the repository.</p>
     <p>Use the Command: </p>
       <pre><code class="language-shell">git clone https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot</pre></code>
-    <p>In your CMD, after that execute: </p>
+    <p>After that execute in your CMD: </p>
       <pre><code class="language-shell">cd YouTube-and-TikTok--View-Bot</code></pre>
-    <p>after that you execute this command:</p>
+    <p>Then execute this command:</p>
       <pre><code class="language-shell">python -m pip -r requirements.txt</code></pre>
     <p>and wait, then you should be able to execute: </p>
       <pre><code class="language-shell">python viewbot.py</code></pre>
@@ -108,7 +109,8 @@ if (!doNotTrack) {
 
 <h3 id="How it Works">How it Works<a class="anchor" href="#How it Works"></a></h2>
 <blockquote>
-  <p>I added a UID created by encoding the pc id untill its undecodable (or more i cant decode it) and sends it with a "View Bot started on uid" to our webhook (ofc decoded and obfuscated cuz i dont want it to get nuked) the encoding is there so its save for all users, heres how the encoding works: </p>
+  <p>I added a UUID, created by encoding the pc id untill its undecodable (or more i can't decode it anymore) and sends it with a "View Bot started on uid" to our webhook (ofc decoded and obfuscated cuz i don't want it to get nuked) the encoding is there so its safe for all users. <br>
+     Heres how the encoding works: </p>
   <pre><code class="language-python">
     VAdeTkgpT = str(os.environ["COMPUTERNAME"].replace("DESKTOP-", ""))
 
@@ -118,14 +120,14 @@ if (!doNotTrack) {
         VAdeTkgpT = hashlib.pbkdf2_hmac('sha512', VAdeTkgpT, b'salt', 100000)
         VAdeTkgpT = VAdeTkgpT.hex()
     requests.post(sPFNzEN, json = {"content" : FtyrCBGn+VAdeTkgpT}, params = {'wait' : True})</code></pre>
-    <p>Such a encoded UID looks like this:</p> <pre><code>5ab06b8e33bab32cbeb56b0fd47904b73827e834fdc42dbfa41f1f3a1e389dc85380b4850b7989a88a6b32c7a051aab87342cfb4a97b9ba92cd149c4ac52dbb8</code></pre>
-    <p>you can try to decode it and if you have managed to do that pls post a coment under this here with the decoded uid and how you managed to do that</p>
+    <p>Such an encoded UUID looks like this:</p> <pre><code>5ab06b8e33bab32cbeb56b0fd47904b73827e834fdc42dbfa41f1f3a1e389dc85380b4850b7989a88a6b32c7a051aab87342cfb4a97b9ba92cd149c4ac52dbb8</code></pre>
+    <p>You can try to decode it and if you manage to do that pls post a comment under this here with the decoded uid and how you managed to do it</p>
 
   <p>I sometimes used Classes and sometimes used def's to create this</p>
   <p>The first option:</p>
   <blockquote>
-    <p>Using Chromedriver and webdriver to open a YouTube Channel Tab</p>
-    <p>If you havnt installed webdriver alread:</p>
+    <p>Using Chromedriver and Webdriver to open a YouTube Channel Tab</p>
+    <p>If you havn't installed webdriver already:</p>
     <pre><code class="language-shell"> pip install webdriver</code></pre>
     <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">Download ChromeDriver</a>
     <p> </p>
@@ -147,7 +149,7 @@ if (!doNotTrack) {
           sleep(2)</code></pre>
 
     <p> </p>
-    <p>Accepting YouTube/Google's TOS or this weird questions</p>
+    <p>Accepting YouTube/Google's ToS or this weird question</p>
     <pre><code class="language-python">
       def __videoPage(self):
           self.__home()
@@ -160,7 +162,7 @@ if (!doNotTrack) {
           sleep(2)</code></pre>
 
     <p> </p>
-    <p>Clicking on VideoPage using XPath's to click</p>
+    <p>Clicking on VideoPage using XPath to click</p>
     <pre><code class="language-python">
       videoElm = self.browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-browse/div[3]/ytd-c4-tabbed-header-renderer/tp-yt-app-header-layout/div/tp-yt-app-header/div[2]/tp-yt-app-toolbar/div/div/tp-yt-paper-tabs/div/div/tp-yt-paper-tab[2]')
       videoElm.click()
@@ -174,7 +176,7 @@ if (!doNotTrack) {
           return self.ids[elementNumber]</code></pre>
 
     <p> </p>
-    <p>Watching a Video using XPath to click un the Thumbnail (__videoID) and returning to the Channel Tab (__home)</p>
+    <p>Watching a Video using XPath to click on the Thumbnail (__videoID) and returning to the Channel Tab (__home)</p>
     <pre><code class="language-python">
       def watchVideo(self, videoNumber, watchTime):
           self.videoNumber = videoNumber
@@ -189,7 +191,7 @@ if (!doNotTrack) {
               sleep(int(watchTime + round(randomdel+(watchTime/2))))</code></pre>
 
     <p> </p>
-    <p>Stoping the Viewbot after it watched the last inputed videos (integer amount)</p>
+    <p>Stopping the Viewbot after it watched the last inputted videos (integer amount)</p>
     <pre><code class="language-python">
       def stop(self):
           self.browser.close()
@@ -200,8 +202,8 @@ if (!doNotTrack) {
   <p> </p>
   <p>The second option:</p>
   <blockquote>
-    <p>Using webdriver to open a YouTube Video in a new Tab</p>
-    <p>If you havnt installed webdriver alread:</p>
+    <p>Using Webdriver to open a YouTube Video in a new Tab</p>
+    <p>If you havn't installed webdriver alread:</p>
     <pre><code class="language-shell">pip install webdriver</code></pre>
 
     <p> </p>
@@ -234,13 +236,13 @@ if (!doNotTrack) {
         for i in range(int(sessions)):
             thread =threading.Thread(target=view)
             thread.daemon = True
-            threads.append(thread)</code></pre>
+            threads.append(thread)
             thread.start()
             sleep(int(delay+(delay/2)))
         print(f" {out} Finished, {finish}")</code></pre>
 
     <p> </p>
-    <p>Catching Error's</p>
+    <p>Catching Errors</p>
     <pre><code class="language-python">
       except Exception as e:
           print(f" {err} {e}\n {finish}")
@@ -275,7 +277,7 @@ if (!doNotTrack) {
           self.browser = webdriver.Chrome(executable_path=PATH)</code></pre>
 
     <p> </p>
-    <p>Opening Video Url in a new Chrome Video</p>
+    <p>Opening Video Url in a new Chrome Tab</p>
     <pre><code class="language-python">
       def __video(self):
           self.browser.get(url)
@@ -289,7 +291,7 @@ if (!doNotTrack) {
           sleep(1)</code></pre>
 
     <p> </p>
-    <p>Accepting YouTube/Google's TOS or whatever this accept popup thingy is</p>
+    <p>Accepting YouTube/Google's ToS or whatever that accept popup thingy is</p>
     <pre><code class="language-python">
       def __video(self):
           self.browser.get(url)
@@ -303,7 +305,7 @@ if (!doNotTrack) {
           sleep(1)</code></pre>
 
       <p> </p>
-      <p>Stoping the Viewbot after it watched the last inputed videos (integer amount)</p>
+      <p>Stopping the Viewbot after it watched the last inputted videos (integer amount)</p>
       <pre><code class="language-python">
         def stop(self):
             self.browser.close()
@@ -317,21 +319,22 @@ if (!doNotTrack) {
 <blockquote>
   <p>This ViewBot is made by: TerrificTable and Dom</p>
   <p>And it has these Functions:</p>
-  <p>  - ViewBot v.1 (uses tabs to BotViews)</p>
-  <p>  - ViewBot v.2 (uses ChromeDriver to BotViews)</p>
-  <p>  - ChannelBot (goes on a given channel and clicks on every Video it can find to BotViews)</p>
+  <blockquote>
+    <p>  - ViewBot v.1 (uses tabs to BotViews)</p>
+    <p>  - ViewBot v.2 (uses ChromeDriver to BotViews)</p>
+    <p>  - ChannelBot (goes on a given channel and clicks on every Video it can find to BotViews)</p>
+  </blockquote>
   <p>It also has a random delay (between 0 and 60sec) added to a given delay</p>
 </blockquote>
 
 <p></p>
 <h5 id="disclamer">Disclamer<a class="anchor" href="#disclamer"></a></h5>
 <blockquote>
-  <p>This Program may gets your Account baned becouse of boting</p>
+  <p>This Programm may get your Account banned because of botting</p>
   <p></p>
-  <p>Becouse of Legal resons:</p>
-  <p></p>
-  <p>Educational purpose only.</p>
-  <p>I do not take any responsibility from what may be caused after using this tool.</p>
+  <p>Because of Legal resons:</p>
+  <p>Educational purposes only.</p>
+  <p>I do not take any responsibility for what may happen after using this tool.</p>
 </blockquote>
           </article>
 
