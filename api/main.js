@@ -7,7 +7,7 @@ document.getElementById('add').addEventListener('click', function() {
 
 function sendItem(item) {
     const req = new XMLHttpRequest();
-    req.open('POST', '/add');
+    req.open('POST', '/api/add');
     req.setRequestHeader('Content-Type', 'application/json')
     req.send(JSON.stringify({ item: item }));
 
