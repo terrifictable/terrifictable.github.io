@@ -2,7 +2,7 @@
   "dependencies": {
     "express": "^4.17.2"
   },
-  "name": "js",
+  "name": "api",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
