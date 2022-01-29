@@ -1,5 +1,4 @@
-from distutils.log import debug
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 app = Flask(__name__)
 
 languages = [{"name": "Python"}, {"name": "JavaScript"}, {"name": "Java"}]
@@ -7,7 +6,7 @@ languages = [{"name": "Python"}, {"name": "JavaScript"}, {"name": "Java"}]
 
 @app.route("/", methods=['GET'])
 def test():
-    return jsonify({"message": "Test"})
+    return render_template("index.html")
 
 
 @app.route("/lang", methods=['GET'])
