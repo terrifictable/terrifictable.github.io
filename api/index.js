@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 
 const api = express();
-api.use(express.static(__dirname + "/public"));
+api.use(express.static(__dirname + "/"));
 api.use(bodyParser.json());
 
 api.listen(5000, () => {
