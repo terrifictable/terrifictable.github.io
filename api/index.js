@@ -14,7 +14,7 @@ api.listen(5000, () => {
 //     res.send('Hello World');
 // });
 
-api.post("/api/add", (req, res) => {
+api.post("/api/", (req, res) => {
     console.log(req.body);
     res.send("It works");
 });
