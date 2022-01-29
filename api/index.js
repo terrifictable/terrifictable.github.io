@@ -7,5 +7,5 @@ api.listen(5000, () => {
 
 api.get("/", (req, res) => {
     console.log(req);
-    res.send(window.location.replace('https://www.example.com/'));
+    res.send("This is a test API");
 });
