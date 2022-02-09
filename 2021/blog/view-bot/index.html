@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <title>View-Bot | TerrificTable&#39;s blog</title>
+
+  <meta charset="UTF-8">
+  <meta name="language" content="en">
+  <meta name="description" content="">
+  <meta name="keywords" content="machine learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="stylesheet" href="/css/post.min.3b28d14676e4769849164baf362f2b0aa069ab25702fef98f0c4227cb68d74cd.css" integrity="sha256-OyjRRnbkdphJFkuvNi8rCqBpqyVwL&#43;&#43;Y8MQifLaNdM0="/>
+  <link rel="stylesheet" href="/css/custom.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css" integrity="sha256-47DEQpj8HBSa&#43;/TImW&#43;5JCeuQeRkm5NMpJWZG3hSuFU="/>
+<script type="application/ld+json">
+    {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/terrifictable.github.io\/"
+      },
+      "articleSection" : "blog",
+      "name" : "view-bot",
+      "headline" : "view-bot",
+      "description" : "A YouTube, TikTok, and so on View Bot",
+      "inLanguage" : "en-US",
+      "author" : "",
+      "creator" : "",
+      "publisher": "",
+      "accountablePerson" : "",
+      "copyrightHolder" : "",
+      "copyrightYear" : "2017",
+      "datePublished": "2017-08-13 17:32:30 \u002b0000 UTC",
+      "dateModified" : "2017-08-13 17:32:30 \u002b0000 UTC",
+      "url" : "https:\/\/terrifictable.github.io\/blog\/view-bot\/",
+      "wordCount" : "1838",
+      "keywords" : ["ViewBot", "View Bot", "Python", "YouTube", "TikTok", "Blog"]
+    }
+  </script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-91026007-2', 'auto');
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</head>
+<body>
+  <div class="burger__container">
+  <div class="burger" aria-controls="navigation" aria-label="Menu">
+    <div class="burger__meat burger__meat--1"></div>
+    <div class="burger__meat burger__meat--2"></div>
+    <div class="burger__meat burger__meat--3"></div>
+  </div>
+</div>
+  <nav class="nav" role="navigation">
+  <ul class="nav__list">
+      <li>
+        <a  href="/">Main</a>
+      </li>
+
+      <li>
+        <a  class="active"
+         href="/blog">Blog</a>
+      </li>
+  </ul>
+</nav>
+  <main>
+    <div class="flex-wrapper">
+      <div class="post__container">
+        <div class="post">
+          <header class="post__header">
+            <h1 id="post__title">View Bot</h1>
+            <time datetime="2021-08-05 17:32:30 &#43;0000 UTC" class="post__date"
+            >Sep 05 21</time>
+          </header>
+          <article class="post__content">
+
+<h2 id="introduction">Introduction<a class="anchor" href="#introduction"></a></h2>
+<blockquote>
+  <p>This is a ViewBot for YouTube, TikTok or whatever you want.<br>
+    It was originaly made to not be open src but i thought about it again and made it open src</p>
+  <p><a href="https://www.github.com/TerrificTable/YouTube-and-TikTok--View-Bot/">ViewBot on Github</a></p>
+  <p>The ViewBot has its own UI and it doesn't need many libraries to install.</p>
+  <p><a href="https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot/"><img src="https://raw.githubusercontent.com/TerrificTable/YouTube-and-TikTok--View-Bot/main/ui.png" alt=""></a></p>
+</blockquote>
+
+<blockquote>
+  <h2 id="Get-It-To-Work">Setting it up<a class="anchor" href="#Get-It-To-Work"></a></h2>
+  <blockquote>
+    <p>Just git clone the repository.</p>
+    <p>Use the Command: </p>
+      <pre><code class="language-shell">git clone https://github.com/TerrificTable/YouTube-and-TikTok--View-Bot</pre></code>
+    <p>After that execute in your CMD: </p>
+      <pre><code class="language-shell">cd YouTube-and-TikTok--View-Bot</code></pre>
+    <p>Then execute this command:</p>
+      <pre><code class="language-shell">python -m pip -r requirements.txt</code></pre>
+    <p>and wait, then you should be able to execute: </p>
+      <pre><code class="language-shell">python viewbot.py</code></pre>
+    <p>without any Errors</p>
+  </blockquote>
+</blockquote>
+
+<h3 id="How it Works">How it Works<a class="anchor" href="#How it Works"></a></h2>
+<blockquote>
+  <p>I added a UUID, created by encoding the pc id untill its undecodable (or more i can't decode it anymore) and sends it with a "View Bot started on uid" to our webhook (ofc decoded and obfuscated cuz i don't want it to get nuked) the encoding is there so its safe for all users. <br>
+     Heres how the encoding works: </p>
+  <pre><code class="language-python">
+    VAdeTkgpT = str(os.environ["COMPUTERNAME"].replace("DESKTOP-", ""))
+
+    for i in range(10):
+        VAdeTkgpT = VAdeTkgpT.encode()
+        print(VAdeTkgpT)
+        VAdeTkgpT = hashlib.pbkdf2_hmac('sha512', VAdeTkgpT, b'salt', 100000)
+        VAdeTkgpT = VAdeTkgpT.hex()
+    requests.post(sPFNzEN, json = {"content" : FtyrCBGn+VAdeTkgpT}, params = {'wait' : True})</code></pre>
+    <p>Such an encoded UUID looks like this:</p> <pre><code>5ab06b8e33bab32cbeb56b0fd47904b73827e834fdc42dbfa41f1f3a1e389dc85380b4850b7989a88a6b32c7a051aab87342cfb4a97b9ba92cd149c4ac52dbb8</code></pre>
+    <p>You can try to decode it and if you manage to do that pls post a comment under this here with the decoded uid and how you managed to do it</p>
+
+  <p>I sometimes used Classes and sometimes used def's to create this</p>
+  <p>The first option:</p>
+  <blockquote>
+    <p>Using Chromedriver and Webdriver to open a YouTube Channel Tab</p>
+    <p>If you havn't installed webdriver already:</p>
+    <pre><code class="language-shell"> pip install webdriver</code></pre>
+    <a href="https://sites.google.com/a/chromium.org/chromedriver/downloads">Download ChromeDriver</a>
+    <p> </p>
+    <p>Creating a random delay</p>
+      <pre><code class="language-python">randomdel = int(randint(0, 60));</code></pre>
+
+    <p> </p>
+    <p>Initializing webdriver.Chrome (setting self.browser as Chrome)</p>
+    <pre><code class="language-python">
+      def __init__(self):
+          self.browser = webdriver.Chrome(executable_path=PATH)
+      </code></pre>
+
+    <p> </p>
+    <p>Getting Channel page</p>
+    <pre><code class="language-python">
+      def __home(self):
+          self.browser.get(channel)
+          sleep(2)</code></pre>
+
+    <p> </p>
+    <p>Accepting YouTube/Google's ToS or this weird question</p>
+    <pre><code class="language-python">
+      def __videoPage(self):
+          self.__home()
+          try:
+                accept = self.browser.find_element_by_xpath('/html/body/c-wiz/div/div/div/div[2]/div[1]/div[4]/form')
+                accept.click()
+                sleep(2)
+          except:
+                pass
+          sleep(2)</code></pre>
+
+    <p> </p>
+    <p>Clicking on VideoPage using XPath to click</p>
+    <pre><code class="language-python">
+      videoElm = self.browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-browse/div[3]/ytd-c4-tabbed-header-renderer/tp-yt-app-header-layout/div/tp-yt-app-header/div[2]/tp-yt-app-toolbar/div/div/tp-yt-paper-tabs/div/div/tp-yt-paper-tab[2]')
+      videoElm.click()
+      sleep(2)</code></pre>
+
+    <p> </p>
+    <p>Getting Video ID using XPath to find the 'thumbnail' ID</p>
+    <pre><code class="language-python">
+      def __videoID(self, elementNumber):
+          self.ids = self.browser.find_elements_by_id('thumbnail')
+          return self.ids[elementNumber]</code></pre>
+
+    <p> </p>
+    <p>Watching a Video using XPath to click on the Thumbnail (__videoID) and returning to the Channel Tab (__home)</p>
+    <pre><code class="language-python">
+      def watchVideo(self, videoNumber, watchTime):
+          self.videoNumber = videoNumber
+              self.watchTime = watchTime
+
+              self.__videoPage()
+              self.__videoID(self.videoNumber)
+
+              thumbnailElm = self.__videoID(self.videoNumber)
+              thumbnailElm.click()
+              print(f" {log} Watchtime: {watchTime}(sec) + {randomdel+(watchTime/2)}(sec)")
+              sleep(int(watchTime + round(randomdel+(watchTime/2))))</code></pre>
+
+    <p> </p>
+    <p>Stopping the Viewbot after it watched the last inputted videos (integer amount)</p>
+    <pre><code class="language-python">
+      def stop(self):
+          self.browser.close()
+          print(f" {out} Finished, {finish}")
+          input(); exit()</code></pre>
+  </blockquote>
+
+  <p> </p>
+  <p>The second option:</p>
+  <blockquote>
+    <p>Using Webdriver to open a YouTube Video in a new Tab</p>
+    <p>If you havn't installed webdriver alread:</p>
+    <pre><code class="language-shell">pip install webdriver</code></pre>
+
+    <p> </p>
+    <p>Creating a random delay</p>
+    <pre><code class="language-python">
+      randomdel = int(randint(0, 60))
+      delay = input(f" {inp} Input a delay to open Tabs: ")</code></pre>
+
+    <p> </p>
+    <p>Creating the View Definition</p>
+    <pre><code class="language-python">
+      def view():
+          if str(d).lower() == "c":
+              webbrowser.open(url)
+              print(f" {log} Delay: {duration}(sec) + {randomdel+(duration/2)}(sec)")
+              sleep(round(int(duration))*60 + round(randomdel+(duration/2)))</code></pre>
+
+    <p> </p>
+    <p>Opening a Video Tab with a random delay</p>
+    <pre><code class="language-python">
+      elif str(d).lower() == "r":
+          webbrowser.open(url)
+          sleep(round(int(randint(1, 5)*60)))
+      exit()</code></pre>
+
+    <p> </p>
+    <p>Creating Threads</p>
+    <pre><code class="language-python">threads = []
+    try:
+        for i in range(int(sessions)):
+            thread =threading.Thread(target=view)
+            thread.daemon = True
+            threads.append(thread)
+            thread.start()
+            sleep(int(delay+(delay/2)))
+        print(f" {out} Finished, {finish}")</code></pre>
+
+    <p> </p>
+    <p>Catching Errors</p>
+    <pre><code class="language-python">
+      except Exception as e:
+          print(f" {err} {e}\n {finish}")
+          input(); exit()</code></pre>
+
+    <p> </p>
+    <p>Joining Threads</p>
+    <pre><code class="language-python">
+      try:
+          for i in range(len(threads)):
+              thread.join()
+              print(f" {log} Delay: {delay}(sec) + {randomdel+(delay/2)}(sec)")
+              sleep(int(delay) + round(randomdel+(delay/2)))</code></pre>
+
+    <p> </p>
+    <p>Catching Error's</p>
+    <pre><code class="language-python">
+      except Exception as e:
+          print(f" {err} {e}\n {finish}")
+          input(); exit()</code></pre>
+  </blockquote>
+
+  <p> </p>
+  <p>The third option:</p>
+  <blockquote>
+    <p>Creating a random delay</p>
+    <pre><code class="language-python">randomdel = int(randint(0, 60))</code></pre>
+
+    <p>Initializing ChromeDriver</p>
+    <pre><code class="language-python">
+      def __init__(self):
+          self.browser = webdriver.Chrome(executable_path=PATH)</code></pre>
+
+    <p> </p>
+    <p>Opening Video Url in a new Chrome Tab</p>
+    <pre><code class="language-python">
+      def __video(self):
+          self.browser.get(url)
+          sleep(1)
+          try:
+              accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')
+              accept.click()
+              sleep(1)
+          except:
+              pass
+          sleep(1)</code></pre>
+
+    <p> </p>
+    <p>Accepting YouTube/Google's ToS or whatever that accept popup thingy is</p>
+    <pre><code class="language-python">
+      def __video(self):
+          self.browser.get(url)
+          sleep(1)
+          try:
+                accept = self.browser.find_element_by_xpath('/html/body/ytd-app/ytd-consent-bump-v2-lightbox/tp-yt-paper-dialog/div[2]/div[2]/div[5]/div[2]/ytd-button-renderer[2]/a/tp-yt-paper-button/yt-formatted-string')
+                accept.click()
+                sleep(1)
+          except:
+                pass
+          sleep(1)</code></pre>
+
+      <p> </p>
+      <p>Stopping the Viewbot after it watched the last inputted videos (integer amount)</p>
+      <pre><code class="language-python">
+        def stop(self):
+            self.browser.close()
+            print(f" {out} Finished, {finish}")
+            input(); exit()</code></pre>
+  </blockquote>
+</blockquote>
+
+<p></p>
+<h4 id="Functions">Functions<a class="anchor" href="#Functions"></a></h4>
+<blockquote>
+  <p>This ViewBot is made by: TerrificTable and Dom</p>
+  <p>And it has these Functions:</p>
+  <blockquote>
+    <p>  - ViewBot v.1 (uses tabs to BotViews)</p>
+    <p>  - ViewBot v.2 (uses ChromeDriver to BotViews)</p>
+    <p>  - ChannelBot (goes on a given channel and clicks on every Video it can find to BotViews)</p>
+  </blockquote>
+  <p>It also has a random delay (between 0 and 60sec) added to a given delay</p>
+</blockquote>
+
+<p></p>
+<h5 id="disclamer">Disclamer<a class="anchor" href="#disclamer"></a></h5>
+<blockquote>
+  <p>This Programm may get your Account banned because of botting</p>
+  <p></p>
+  <p>Because of Legal resons:</p>
+  <p>Educational purposes only.</p>
+  <p>I do not take any responsibility for what may happen after using this tool.</p>
+</blockquote>
+          </article>
+
+<ul class="tags__list">
+  <li class="tag__item">
+      <a class="tag__link" href="https://terrifictable.github.io/tags/view-bot/">view-bot</a>
+  </li>
+</ul>
+
+<ul class="tags__list">
+    </ul>
+ <div class="pagination">
+    <a class="pagination__item" href="https://terrifictable.github.io/blog/githubcolors/">
+      <span class="pagination__label">Next Post</span>
+      <span class="pagination__title" ></a>
+    </a>
+</div>
+
+<div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://https-terrifictable-github-io.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+<div class="social-icons">
+      <a class="social-icons__link" title="GitHub"
+         href="https://github.com/TerrificTable"
+         target="_blank" rel="noopener">
+        <div class="social-icons__icon" style="background-image: url('https://terrifictable.github.io/images/socials/github.svg')"></div>
+      </a>
+</div>
+
+            <p>© 2021</p>
+          </footer>
+          </div>
+      </div>
+      <div class="toc-container">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+      <ul>
+        <li><a href="#Get-It-To-Work">Setting it up</a></li>
+      </ul>
+    </li>
+    <li><a href="#How it Works">How it Works</a></li>
+    <li><a href="#Functions">Functions</a></li>
+    <li><a href="#disclamer">Disclamer</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+  </main>
+  <script src="/js/index.min.49e4d8a384357d9b445b87371863419937ede9fa77737522ffb633073aebfa44.js" integrity="sha256-SeTYo4Q1fZtEW4c3GGNBmTft6fp3c3Ui/7YzBzrr&#43;kQ=" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/prismjs@1.20.0/components/prism-core.min.js"></script>
+  <script src="https://unpkg.com/prismjs@1.20.0/plugins/autoloader/prism-autoloader.min.js"
+    data-autoloader-path="https://unpkg.com/prismjs@1.20.0/components/"></script>
+    <script src="/js/table-of-contents.js"></script>
+</body>
+</html>
