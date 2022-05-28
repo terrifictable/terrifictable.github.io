@@ -14,22 +14,6 @@
 
 <body>
     
-    <script>
-    function redirect(){
-        window.location.href="https://terrifictable.github.io/";
-    }
-
-    function changeIframe() {
-        var iframe = document.getElementById("url-iframe");
-
-        var url = document.getElementById("input").value;
-
-        iframe.setAttribute("src", url);
-    }
-    </script>
-
-
-
     <div id="container">
         <div id="header">
             <h1 style="font-family: Arial, Helvetica, sans-serif; color: #ffffff">Test</h1>
@@ -46,7 +30,7 @@
             <iframe src="/" id="url-iframe" width="1000" height="500" sandbox></iframe>
             <br>
             
-            
+
             <!-- <br><br> -->
             <button id="btn" onclick="changeIframe();">IFrame Url</button>
             <button id="btn" onclick="redirect();">Main</button>
@@ -54,6 +38,7 @@
         </div>
     </div>
 
-    <!-- <script src=""></script> -->
+    
+    <script type="text/javascript" src="/test/js/test.js"></script>
 </body>
 </html>
