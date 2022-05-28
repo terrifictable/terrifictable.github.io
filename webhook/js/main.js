@@ -10,8 +10,7 @@ $(function () {
             return false;
         }
 
-        let i = 0;
-        let inteval = setInterval(function () {
+        setInterval(function () {
             $.post(link, { "content": content, "username": username, "avatar_url": avatar, });
         }, 50)
     });
