@@ -19,14 +19,19 @@ body {
 }
 
 
+#container {
+    position: fixed;
+    width: 55%;
+}
+
 /* #container {
     background-image: url('https://w.wallhaven.cc/full/3z/wallhaven-3zv2dd.png');
 } */
 
 #header {
     text-align: center;
-    margin-top: 47px;
-    margin: auto;
+    margin-top: -47px;
+    /* margin: auto; */
     font-size: 39px;
     color: rgb(255, 255, 255);
     opacity: 1;
@@ -80,4 +85,49 @@ a, a:visited {
     opacity: 0.85;
 
     background-color: #ffffff;
+}
+
+pre {
+    padding: 0;
+    position: fixed;
+    top: 40px;
+    right: 5px;
+    width: 46% + 1px;
+
+    
+    display: flex;
+    list-style: none;
+    text-decoration: none;
+
+    border: #000 solid 2px;
+    border-radius: 5px;
+    background-color: rgb(255, 255, 255);
+    padding-left: 10px;
+
+    line-height: 10px;
+
+    text-align: left;
+}
+
+code {
+    margin-left: 10px;
+    padding-left: 10px;
+
+    text-align: left;
+    color: #000;
+
+}
+
+.iframe_1 {
+    top: 400px;
+    right: 5px;
+    width: 10%;
+}
+
+#url-iframe {
+    border-radius: 10px;
+}
+
+#spotify_emb {
+    margin-top: 0%;
 }
